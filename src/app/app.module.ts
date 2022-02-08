@@ -73,8 +73,8 @@ import { ToastrModule } from 'ngx-toastr';
       MatCardModule,
       ToastrModule.forRoot({
         timeOut: 4000,
-        closeButton:true,
-        progressBar:true
+        closeButton: true,
+        progressBar: true
       })
   ],
   providers: [],
