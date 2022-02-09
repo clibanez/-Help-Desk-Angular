@@ -9,6 +9,7 @@ import { TecnicoService } from '../../../services/tecnico.service';
   templateUrl: './tecnico-list.component.html',
   styleUrls: ['./tecnico-list.component.css']
 })
+
 export class TecnicoListComponent implements OnInit {
 
     ELEMENT_DATA:Tecnico[] = []
@@ -38,5 +39,6 @@ export class TecnicoListComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
 
 }
