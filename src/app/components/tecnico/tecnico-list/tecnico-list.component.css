@@ -20,3 +20,10 @@ h1{
   margin-bottom: 2rem;
 
 }
+
+.edit{
+  color: rgb(0, 195, 255);
+}
+.delete{
+  color: red;
+}
