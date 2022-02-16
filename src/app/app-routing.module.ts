@@ -14,22 +14,28 @@ import { ClienteCreateComponent } from './components/cliente/cliente-create/clie
 import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
 import { ClienteListComponent } from './components/cliente/cliente-list/cliente-list.component';
 import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
+import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
 
 
 const routes: Routes = [
+  //Rota separada Login
   { path: 'login', component: LoginComponent },
-  {
-    path: '' , component: NavComponent, canActivate: [AuthGuard], children: [
+    //Rota principal nav
+  { path: '' , component: NavComponent, canActivate: [AuthGuard], children: [
+      //Rota home
       { path: 'home', component: HomeComponent },
+      //Rotas Tecnico
       { path: 'tecnicos', component: TecnicoListComponent},
       {path: 'tecnicos/create', component: TecnicoCreateComponent},
       {path: 'tecnicos/update/:id', component: TecnicoUpdateComponent},
       {path: 'tecnicos/delete/:id', component: TecnicoDeleteComponent},
-
-      { path: 'clientes',            component:   ClienteListComponent },
+      //Rotas para cliente
+      { path: 'clientes',            component: ClienteListComponent   },
       { path: 'clientes/create',     component: ClienteCreateComponent },
       { path: 'clientes/update/:id', component: ClienteUpdateComponent },
       { path: 'clientes/delete/:id', component: ClienteDeleteComponent },
+          //Rotas para chamado
+      { path:   'chamados',              component: ChamadoListComponent},
 
     ]
   }

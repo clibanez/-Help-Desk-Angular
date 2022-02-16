@@ -7,7 +7,7 @@ export interface Chamado {
     titulo: any;
     descricao: String;
     tecnico: any;
-    clinete: any;
+    cliente: any;
     nomeCliente: String;
     nomeTecnico: String;
 
