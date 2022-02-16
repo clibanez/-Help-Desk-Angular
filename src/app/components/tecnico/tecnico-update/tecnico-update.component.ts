@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { TecnicoService } from '../../../services/tecnico.service';
-import { Tecnico } from '../../../model/tecnico';
-import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
+import { TecnicoService } from 'src/app/services/tecnico.service';
+import { Tecnico } from '../../../model/tecnico';
+
 
 @Component({
   selector: 'app-tecnico-update',
@@ -11,6 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./tecnico-update.component.css']
 })
 export class TecnicoUpdateComponent implements OnInit {
+
   tecnico: Tecnico = {
     id:         '',
     nome:       '',
@@ -30,13 +33,13 @@ export class TecnicoUpdateComponent implements OnInit {
     private service: TecnicoService,
     private toast:    ToastrService,
     private router:          Router,
-    private route: ActivatedRoute,
+    private route:   ActivatedRoute,
     ) { }
 
   ngOnInit(): void {
     this.tecnico.id = this.route.snapshot.paramMap.get('id');
     this.findById();
-  }
+   }
 
   findById(): void {
     this.service.findById(this.tecnico.id).subscribe(resposta => {
@@ -74,4 +77,3 @@ export class TecnicoUpdateComponent implements OnInit {
      && this.email.valid && this.senha.valid
   }
 }
-

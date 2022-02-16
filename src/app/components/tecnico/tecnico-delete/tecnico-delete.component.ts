@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { TecnicoService } from '../../../services/tecnico.service';
-import { Tecnico } from '../../../model/tecnico';
-import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { Tecnico } from 'src/app/model/tecnico';
+
+import { TecnicoService } from 'src/app/services/tecnico.service';
 
 @Component({
   selector: 'app-tecnico-delete',
@@ -22,18 +23,17 @@ export class TecnicoDeleteComponent implements OnInit {
     dataCriacao: ''
   }
 
-
   constructor(
     private service: TecnicoService,
     private toast:    ToastrService,
     private router:          Router,
-    private route: ActivatedRoute,
+    private route:   ActivatedRoute,
     ) { }
 
   ngOnInit(): void {
     this.tecnico.id = this.route.snapshot.paramMap.get('id');
     this.findById();
-  }
+   }
 
   findById(): void {
     this.service.findById(this.tecnico.id).subscribe(resposta => {
@@ -58,4 +58,3 @@ export class TecnicoDeleteComponent implements OnInit {
   }
 
 }
-
