@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { ChamadoService } from '../../../services/chamado.service';
 import { Chamado } from 'src/app/model/chamado';
 import { ToastrService } from 'ngx-toastr';
